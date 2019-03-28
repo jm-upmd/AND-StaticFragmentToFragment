@@ -19,24 +19,24 @@ public class BlueFragment extends Fragment {
 
         Log.d("fragmento","En onCreateView del azul");
 
-        // En este mentodo se hace el inflado del fragmento y se crean las referencias
-        // a sus views componentes.
+        // En este método se hace el inflado del fragmento .
         View v = inflater.inflate(R.layout.fragment_blue, container, false);
         return v;
     }
 
-    // This event is triggered soon after onCreateView().
-    // onViewCreated() is only called if the view returned from onCreateView() is non-null.
-    // Any view setup should occur here.  E.g., view lookups and attaching view listeners.
+    // Este método se ejecuta justo después del onCreateView. Es llamado solo si la view devuelta
+    // por onCreateView no es null.
+    // Aquí se crean las referencias a los views y demás objetos del layout del fragment,
+    // se implementan sus listeners, ...
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        // La view que contiene el fragmento
+        //  view es la View que contiene el fragmento
         mTextView = view.findViewById(R.id.textview);
     }
 
-    // Este es un método público que la actividad puede usar para comunicarse directamente con
-    // este fragmento.
+    // Este es un método público que la actividad contenedora puede usar para
+    // comunicarse directamente con este fragmento.
 
     public void tienesUnMensaje(String mensaje) {
         mTextView.setText(mensaje);
